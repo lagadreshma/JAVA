@@ -30,8 +30,14 @@ public class SnakeWaterGunGame {
 
             return -1;
 
-        }else{
+        }else if(you == comp){
+            
             return 0;
+            
+        }else{
+            
+            return 2;
+            
         }
 
     }
@@ -57,17 +63,25 @@ public class SnakeWaterGunGame {
         int result = gameWinner(you,comp);
 
         if(result == 1){
+            
             System.out.println("Congratulations!! You win Game.");
-            System.out.println("You choose : " + you + " and Computer Choose : " + comp);
+            
         }else if(result == -1){
+            
             System.out.println("OO No , Computer Win Game.");
-            System.out.println("You choose : " + you + " and Computer Choose : " + comp);
-        }else{
+            
+        }else if(result == 0){
+            
             System.out.println("Game Tie.");
-            System.out.println("You choose : " + you + " and Computer Choose : " + comp);
+            
+        }else{
+            
+            System.out.println("Invalid Input.");
+            
         }
-
-
+        
+        
+        System.out.println("You choose : " + you + " and Computer Choose : " + comp);
 
     }
 
