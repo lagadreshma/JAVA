@@ -30,10 +30,14 @@ public class RockPaperScissorGame {
 
             return 1;
 
-        }else{
+        }else if(you == comp){
 
             return 0;
 
+        }else{
+            
+            return 2;
+         
         }
 
     }
@@ -61,8 +65,10 @@ public class RockPaperScissorGame {
             System.out.println("Congratulations!!! You Win Game.");
         }else if(result == -1){
             System.out.println("OO No, Computer Win Game.");
-        }else{
+        }else if(result == 0){
             System.out.println("Game Tie!!");
+        }else{
+            System.out.println("Invalid Input.");
         }
 
         System.out.println("You Choose : " + you + " and Computer Choose : " + comp);
