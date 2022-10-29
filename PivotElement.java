@@ -5,24 +5,28 @@ public class PivotElement {
 
     public static int findPivotElement(int arr[], int size){
 
-        int start = 0;
-        int end = size - 1;
-        int mid = start + (end - start) / 2;
-
-        while(start < end){
-
-            if(arr[mid] >= arr[0]){
-                start = mid + 1;
-            }else{
-                end = mid;
-            }
-
-            mid = start + (end - start) / 2;
-
+        int sum = 0;
+        
+        for(int i = 0; i < size; i++){
+            sum = sum + arr[i];
         }
-
-        return start;
-
+        
+        int temp = 0;
+        
+        for(int i = 0; i < size; i++){
+            
+            sum = sum - arr[i];
+            if(temp == sum){
+                return i;
+            }
+            else{
+                temp = temp + arr[i];
+            }
+            
+        }
+        
+        return -1;
+        
     }
 
     public static void main(String args[]){
