@@ -37,6 +37,12 @@ public class BookAllocationProblem {
         int mid = s + (e - s) / 2;
 
         while(s <= e){
+            
+            if(students > size){
+                
+                return -1;
+                
+            }
 
             if(isPossible(arr, size, students, mid)){
 
